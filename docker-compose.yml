@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  
+  backend:
+    build:
+      context: ./src
+    command: gunicorn litdot.wsgi:application --bind 0.0.0.0:8000 
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./src/.env
+
+
+  stripe-cli:
+    image: stripe/stripe-cli
+    volumes:
+      - ./stripe:/root/.config/stripe
+    environment:
+      - STRIPE_SECRET_KEY
+    command: ["listen", "--forward-to=http://backend:8000/api/stripe-webhook/"]
+    depends_on:
+      - backend
+
+
+  frontend:
+    build:
+      context: ./shop
+    volumes:
+      - react_build:/react/build
+    command: npm run build
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:8080"
+    volumes:
+      - ./nginx/nginx-setup.conf:/etc/nginx/conf.d/default.conf:ro
+      - react_build:/var/www/react
+    # depends_on:
+    #   - backend
+    #   - frontend
+
+volumes:
+  react_build:

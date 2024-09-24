@@ -1,0 +1,12 @@
+color = ''
+project-name = 'default'
+[default]
+account_id = 'acct_1OepknGbfrsFtZ67'
+device_name = 'be477056a98c'
+live_mode_api_key = 'rk_live_***********************************************************************************************dDUz'
+live_mode_key_expires_at = '2024-05-05'
+live_mode_pub_key = 'pk_live_51OepknGbfrsFtZ672HEAelR26hcB0eDbaBb8xVKpLWtIhJn0CzGRhBDY2r02w3LmsxbrK76mjVxrkjQl5CwDwCDr00jgOsRbZ0'
+test_mode_api_key = 'rk_test_51OepknGbfrsFtZ67aPayh88pvaJizMPS8JYxgn927q7WXyn6amsy4q1dIVIA9rFCXBpzTaijfrtf4GNopS6dgu0x00hak8xZcP'
+test_mode_key_expires_at = '2024-05-05'
+test_mode_pub_key = 'pk_test_51OepknGbfrsFtZ67FHlUw35iSx17OxbiAcq1T8Ur6cLFXQAZ5FqdoZ3VY4KBZ4pNnA94fAO9iQmGtwZoaT05v8er00WYYyJU9C'
+
